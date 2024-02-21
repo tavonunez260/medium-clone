@@ -1,3 +1,74 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": [
+		"next/core-web-vitals",
+		"prettier",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"plugins": [
+		"prettier",
+		"react-hooks",
+		"sort-destructure-keys"
+	],
+	"rules": {
+		"@typescript-eslint/no-unused-vars": ["error", {
+			"vars": "all",
+			"args": "after-used",
+			"ignoreRestSiblings": true,
+			"argsIgnorePattern": "^_"
+		}],
+		"@typescript-eslint/member-ordering": ["error", {
+			"default": {
+				"order": "alphabetically"
+			}
+		}],
+		"prettier/prettier": "error",
+		"arrow-body-style": ["error", "as-needed"],
+		"import/order": [
+			"error",
+			{
+				"groups": [["builtin", "external"], ["parent", "sibling"], "index", "object", "type"],
+				"pathGroups": [
+					{
+						"pattern": "@/**",
+						"group": "parent"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["builtin"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"no-use-before-define": [
+			"error",
+			{
+				"functions": false,
+				"classes": true
+			}
+		],
+		"no-var": "error",
+		"prefer-const": "error",
+		"react/self-closing-comp": [
+			"error",
+			{
+				"component": true,
+				"html": true
+			}
+		],
+		"react/jsx-sort-props": ["error", {
+			"ignoreCase": true,
+			"callbacksLast": true,
+			"shorthandFirst": false,
+			"shorthandLast": false,
+			"noSortAlphabetically": false,
+			"reservedFirst": true
+		}],
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"sort-destructure-keys/sort-destructure-keys": ["error", {
+			"caseSensitive": false
+		}]
+	}
 }
