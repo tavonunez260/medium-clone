@@ -20,7 +20,6 @@ type CommentForm = {
 };
 
 export default function Post({ post }: Props) {
-	console.log(post);
 	const {
 		formState: { errors },
 		handleSubmit,
@@ -45,7 +44,6 @@ export default function Post({ post }: Props) {
 			body: JSON.stringify({ _id: post._id, ...data })
 		})
 			.then(() => {
-				console.log(data);
 				showNotification('Comment Submitted', 'Your comment has been submitted for review');
 				reset();
 			})
