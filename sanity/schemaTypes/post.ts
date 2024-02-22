@@ -37,6 +37,12 @@ export default defineType({
 			to: { type: 'author' }
 		}),
 		defineField({
+			name: 'comments',
+			title: 'Comments',
+			type: 'reference',
+			to: { type: 'comment' }
+		}),
+		defineField({
 			name: 'mainImage',
 			title: 'Main image',
 			type: 'image',

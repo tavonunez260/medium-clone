@@ -25,7 +25,9 @@ export const config = {
 		// https://www.sanity.io/docs/the-vision-plugin
 		visionTool({ defaultApiVersion: apiVersion })
 	],
-	apiVersion: '2021-08-31'
+	apiVersion: '2021-08-31',
+	useCdn: process.env.NODE_ENV === 'production',
+	token: process.env.SANITY_API_TOKEN
 };
 export const sanityClient = createClient(config);
 
